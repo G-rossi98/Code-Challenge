@@ -6,12 +6,12 @@
 pip install psycopg2 
 ```
 
-O banco de dados utilizado é o mesmo do desafio então, é necessario entrar no diretorio que contem o arquivo docker-compose.yml e executar o comando:
+O banco de dados utilizado é o mesmo do desafio então, é necessario entrar no diretorio que contem o arquivo docker-compose.yml e executar o comando para subir a imagem no conteiner:
 
 ```
 docker-compose up -d
 ```
-Para subir a imagem no conteiner.
+
 ## step1
 
 Tendo o db do step1 rodando no conteiner vá até o diretorio:
