@@ -2,6 +2,7 @@ import psycopg2
 import csv, re, os 
 from config import config
 from datetime import datetime, timezone, timedelta
+from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT 
 
 def connect():
     connection = None
@@ -9,7 +10,7 @@ def connect():
         params = config()
         print("Connection to the database ...")
         connection = psycopg2.connect(**params)
-
+        connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
         cur = connection.cursor()
         cur.execute("select relname from pg_class where relkind='r' and relname !~ '^(pg_|sql_)';")
         tables = cur.fetchall()
@@ -27,6 +28,13 @@ def connect():
             
             write_csv(table, column_names, filetype, day)
             read_csv()
+
+
+            #Create db
+            cur.execute("SELECT * FROM pg_catalog.pg_database WHERE datname = 'dbstep2'")
+            exists = cur.fetchone()
+            if not exists:
+                cur.execute('CREATE DATABASE dbstep2')
         print("Done.")
         return
         
@@ -41,7 +49,7 @@ def connect():
             print("Database connection finished.")
 
 def read_csv():
-    path = "step1/data/order_details.csv"
+    path = "./data/order_details.csv"
     archive = []
     filetype = "csv"
     name = os.path.basename(path).replace(".csv", "")

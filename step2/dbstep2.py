@@ -1,6 +1,7 @@
+
 import os, re, csv, json
 import psycopg2
-from configstep2 import config
+from config import config
 
 def connect():
     connection = None
@@ -20,9 +21,10 @@ def connect():
         query_orders(cur, name)
         print("Done.")
         return
-        
+    
     except(Exception, psycopg2.DatabaseError) as error:
         print(error)
+    
 
     finally:
         if connection is not None:
