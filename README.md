@@ -1,4 +1,5 @@
 # code-challenge
+
 ## pre-installed packages required
 - Docker
 - Git
@@ -12,7 +13,7 @@ pip install psycopg2
 
 ### Cloning repository
 
-to clone the repository use the command:
+to clone the repository use the command
 ```
 git clone https://github.com/G-rossi98/code-challenge.git
 ```
@@ -36,7 +37,7 @@ python ./step1/dbstep1.py
 
 ## step2
 
-in the same directory, run the command to run the second step where, the script will read the data from disk and put it in a new database and then have a json output file with the data
+in the same directory, run the command to run the second step where, the script will read the data from local disk and put it in a new database and then have a json output file with the data
 
 ```
 python ./step2/dbstep2.py
