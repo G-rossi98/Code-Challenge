@@ -28,32 +28,16 @@ docker-compose up -d
 
 ## step1
 
-Tendo o db do step1 rodando no conteiner vá até o diretorio:
-
-```
-./code-challenge
-```
-
-e execute o comando:
+in the same directory, run the command run the first step where, the script will read the data from the csv file and database and rewrite them on the local disk
 
 ```
 python ./step1/dbstep1.py
 ```
 
-Aparecerá uma pasta dados contendo todo os arquivos extraidos no formato csv 
-
 ## step2
 
-Estando no diretoirio.
-
-```
-./code-challenge
-```
-
-e com o db do step2 rodando execute o comando:
+in the same directory, run the command to run the second step where, the script will read the data from disk and put it in a new database and then have a json output file with the data
 
 ```
 python ./step2/dbstep2.py
 ```
-
-Aparecerá um arquivo json com o resultado da query. 
