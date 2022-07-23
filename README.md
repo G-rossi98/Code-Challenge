@@ -1,5 +1,5 @@
 # code-challenge
-## pre-installed these packages
+## pre-installed packages required
 - Docker
 - Git
 - Python3
@@ -16,7 +16,7 @@ to clone the repository use the command:
 ```
 git clone https://github.com/G-rossi98/code-challenge.git
 ```
-### Conteiner with image
+### Conteiner with db image 
 go to the directory
 ```
 cd ./code-challenge
